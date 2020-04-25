@@ -1,3 +1,5 @@
+README.md
+setup.cfg
 setup.py
 brain_games/__init__.py
 brain_games/cli.py

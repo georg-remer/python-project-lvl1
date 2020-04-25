@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "georg-remer_brain_games"
-version = "0.2.0"
+version = "0.3.0"
 description = ""
 authors = ["George Rymarenko <george.rymarenko@icloud.com>"]
 packages = [
@@ -12,6 +12,7 @@ python = "^3.8"
 prompt = "^0.4.1"
 
 [tool.poetry.dev-dependencies]
+wemake-python-styleguide = "^0.14.0"
 
 [tool.poetry.scripts]
 brain-games = "brain_games.scripts.brain_games:main"
