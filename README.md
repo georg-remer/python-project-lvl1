@@ -3,4 +3,4 @@
 [![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
 [![Maintainability](https://api.codeclimate.com/v1/badges/936db6735ea6a4a580ed/maintainability)](https://codeclimate.com/github/georg-remer/python-project-lvl1/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/936db6735ea6a4a580ed/test_coverage)](https://codeclimate.com/github/georg-remer/python-project-lvl1/test_coverage)
-[[![asciicast](https://asciinema.org/a/WrZ0lopR1rafntGBj9AdL4UJu.svg)](https://asciinema.org/a/WrZ0lopR1rafntGBj9AdL4UJu)
+[![asciicast](https://asciinema.org/a/WrZ0lopR1rafntGBj9AdL4UJu.svg)](https://asciinema.org/a/WrZ0lopR1rafntGBj9AdL4UJu)
