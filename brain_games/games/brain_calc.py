@@ -1,15 +1,21 @@
-"""Game logic."""
+"""Game: Calculator."""
 
 import random
 
 from brain_games.cli import ask_for_answer, welcome_user
 from brain_games.scripts.brain_games import get_intro
 
-GAME_DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".'
+GAME_DESCRIPTION = 'What is the result of the expression?'
 NR_QUESTIONS = 3
-EVEN_ANSWER = 'yes'
-NOT_EVEN_ANSWER = 'no'
 CORRECT = 'Correct!'
+
+# Numbers range
+START, STOP = 1, 100
+
+# Arithmetical operators to be used in game
+ADDITION = '+'
+SUBTRACTION = '-'
+MULTIPLICATION = '*'
 
 
 def get_game_description():
@@ -21,54 +27,46 @@ def get_game_description():
     return GAME_DESCRIPTION
 
 
-def get_correct_answer(is_even=False):
-    """Return string representation for correct answer.
+def get_correct_answer(operand_x, operand_y, operator):
+    """Calculate correct answer.
 
     Args:
-        is_even: flag for even
+        operand_x: first operand
+        operand_y: second operand
+        operator: operator for provided operands
 
     Returns:
         str
     """
-    if is_even:
-        return EVEN_ANSWER
-    return NOT_EVEN_ANSWER
-
-
-def get_opposite_answer(answer):
-    """Return opposite answer.
-
-    Return 'yes' if 'no' was provided and vice versa.
-
-    Args:
-        answer: 'yes' or 'no'
-
-    Returns:
-        str
-    """
-    if answer not in set(EVEN_ANSWER, NOT_EVEN_ANSWER):
-        return 'Such an answer is not specified!'
-    if answer == EVEN_ANSWER:
-        return NOT_EVEN_ANSWER
-    if answer == NOT_EVEN_ANSWER:
-        return EVEN_ANSWER
+    number = None
+    if operator == ADDITION:
+        number = operand_x + operand_y
+    elif operator == SUBTRACTION:
+        number = operand_x - operand_y
+    elif operator == MULTIPLICATION:
+        number = operand_x * operand_y
+    return str(number)
 
 
 def get_question():
     """Generate question.
 
-    Generate target number, set 'is_even' to True if target number is even,
-    define correct answer for the target number and generate question itself
+    Generate operands and operator, calculate correct answer
+    and generate question itself
 
     Returns:
         str
         str
     """
-    target = random.randint(1, 100)
-    is_even = bool(target % 2 == 0)
-    correct_answer = get_correct_answer(is_even)
-    question = 'Question: {target}'.format(target=target)
-
+    operator = random.choice([ADDITION, SUBTRACTION, MULTIPLICATION])
+    operand_x = random.randint(START, STOP)
+    operand_y = random.randint(START, STOP)
+    correct_answer = get_correct_answer(operand_x, operand_y, operator)
+    question = 'Question: {x} {operator} {y}'.format(
+        x=operand_x,
+        operator=operator,
+        y=operand_y,
+    )
     return question, correct_answer
 
 
