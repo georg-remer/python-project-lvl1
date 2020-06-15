@@ -1,25 +1,14 @@
 """Main module."""
 
-from brain_games.cli import welcome_user
-
-INTRO = 'Welcome to the Brain Games!'
-
-
-def get_intro():
-    """Return intro.
-
-    Returns:
-        str
-    """
-    return INTRO
+from brain_games.games.engine import play_game
 
 
 def main():
-    """Print intro and welcome user."""
-    print('{intro}\n'.format(intro=get_intro()))
+    """Play the game.
 
-    greeting = welcome_user()[0]
-    print(greeting)
+    No game is specified, so it greets the user only.
+    """
+    play_game()
 
 
 if __name__ == '__main__':
