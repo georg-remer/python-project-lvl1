@@ -11,7 +11,12 @@ The flow is the following:
 """
 
 from brain_games.cli import ask_user, inform_user, welcome_user
-from brain_games.games import brain_calc, brain_even, brain_gcd
+from brain_games.games import (
+    brain_progression,
+    brain_calc,
+    brain_even,
+    brain_gcd,
+)
 
 INTRO = 'Welcome to the Brain Games!'
 NUMBER_OF_ROUNDS = 3
@@ -36,6 +41,9 @@ def init(game):
     elif game == 'brain_gcd':
         game_description = brain_gcd.GAME_DESCRIPTION
         get_question_and_answer = brain_gcd.get_question_and_answer
+    elif game == 'brain_progression':
+        game_description = brain_progression.GAME_DESCRIPTION
+        get_question_and_answer = brain_progression.get_question_and_answer
     return game_description, get_question_and_answer
 
 
