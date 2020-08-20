@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "georg-remer_brain_games"
-version = "0.7.2"
+version = "0.8.0"
 description = ""
 authors = ["George Rymarenko <george.rymarenko@icloud.com>"]
 packages = [
@@ -19,6 +19,7 @@ brain-games = "brain_games.scripts.brain_games:main"
 brain-calc = "brain_games.scripts.brain_calc:main"
 brain-even = "brain_games.scripts.brain_even:main"
 brain-gcd = "brain_games.scripts.brain_gcd:main"
+brain-prime = "brain_games.scripts.brain_prime:main"
 brain-progression = "brain_games.scripts.brain_progression:main"
 
 [build-system]
