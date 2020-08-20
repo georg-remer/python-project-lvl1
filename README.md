@@ -20,4 +20,4 @@
 [![asciicast](https://asciinema.org/a/354466.svg)](https://asciinema.org/a/354466)
 
 ## 'Prime Number' game
-[![asciicast](https://asciinema.org/a/354658.svg)](https://asciinema.org/a/354658)
+[![asciicast](https://asciinema.org/a/354659.svg)](https://asciinema.org/a/354659)
