@@ -12,10 +12,10 @@ The flow is the following:
 
 from brain_games.cli import ask_user, inform_user, welcome_user
 from brain_games.games import (
-    brain_progression,
     brain_calc,
     brain_even,
     brain_gcd,
+    brain_progression,
 )
 
 INTRO = 'Welcome to the Brain Games!'
