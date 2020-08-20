@@ -16,21 +16,6 @@ STEP_MIN = 1
 STEP_MAX = 10
 
 
-def _get_correct_answer(n1, n2):
-    """Find greatest common divisor.
-
-    Args:
-        n1: first number
-        n2: second number
-
-    Returns:
-        str
-    """
-    if n2 == 0:
-        return str(n1)
-    return str(_get_correct_answer(n2, n1 % n2))
-
-
 def get_question_and_answer():
     """Generate question and correct answer.
 
