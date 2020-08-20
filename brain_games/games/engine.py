@@ -15,6 +15,7 @@ from brain_games.games import (
     brain_calc,
     brain_even,
     brain_gcd,
+    brain_prime,
     brain_progression,
 )
 
@@ -41,6 +42,9 @@ def init(game):
     elif game == 'brain_gcd':
         game_description = brain_gcd.GAME_DESCRIPTION
         get_question_and_answer = brain_gcd.get_question_and_answer
+    elif game == 'brain_prime':
+        game_description = brain_prime.GAME_DESCRIPTION
+        get_question_and_answer = brain_prime.get_question_and_answer
     elif game == 'brain_progression':
         game_description = brain_progression.GAME_DESCRIPTION
         get_question_and_answer = brain_progression.get_question_and_answer
