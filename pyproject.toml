@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "georg-remer_brain_games"
-version = "0.8.2"
+version = "0.8.3"
 description = ""
 authors = ["George Rymarenko <george.rymarenko@icloud.com>"]
 packages = [
