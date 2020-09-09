@@ -32,7 +32,16 @@ def _get_correct_answer(target):
     return PRIME_ANSWER
 
 
-def get_question_and_answer():
+def get_description():
+    """Return game description.
+
+    Returns:
+        str
+    """
+    return GAME_DESCRIPTION
+
+
+def set_up():
     """Generate question and correct_answer.
 
     Generate target number, get correct answer for the target number
@@ -44,6 +53,6 @@ def get_question_and_answer():
     """
     target = random.randint(START, STOP)
     correct_answer = _get_correct_answer(target)
-    question = 'Question: {target}'.format(target=target)
+    question = '{target}'.format(target=target)
 
     return question, correct_answer

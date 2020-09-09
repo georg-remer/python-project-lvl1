@@ -8,7 +8,7 @@ GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.'
 START, STOP = 1, 100
 
 
-def _get_correct_answer(n1, n2):
+def _find_gcd(n1, n2):
     """Find greatest common divisor.
 
     Args:
@@ -19,11 +19,20 @@ def _get_correct_answer(n1, n2):
         str
     """
     if n2 == 0:
-        return str(n1)
-    return str(_get_correct_answer(n2, n1 % n2))
+        return n1
+    return _find_gcd(n2, n1 % n2)
 
 
-def get_question_and_answer():
+def get_description():
+    """Return game description.
+
+    Returns:
+        str
+    """
+    return GAME_DESCRIPTION
+
+
+def set_up():
     """Generate question and correct answer.
 
     Generate two number and get correct answer
@@ -34,8 +43,8 @@ def get_question_and_answer():
     """
     number1 = random.randint(START, STOP)
     number2 = random.randint(START, STOP)
-    correct_answer = _get_correct_answer(number1, number2)
-    question = 'Question: {n1} {n2}'.format(
+    correct_answer = str(_find_gcd(number1, number2))
+    question = '{n1} {n2}'.format(
         n1=number1,
         n2=number2,
     )

@@ -13,7 +13,7 @@ SUBTRACTION = '-'
 MULTIPLICATION = '*'
 
 
-def _get_correct_answer(operand_x, operand_y, operator):
+def _calculate(operand_x, operand_y, operator):
     """Calculate correct answer.
 
     Args:
@@ -22,7 +22,7 @@ def _get_correct_answer(operand_x, operand_y, operator):
         operator: operator for provided operands
 
     Returns:
-        str
+        int
     """
     number = None
     if operator == ADDITION:
@@ -31,10 +31,19 @@ def _get_correct_answer(operand_x, operand_y, operator):
         number = operand_x - operand_y
     elif operator == MULTIPLICATION:
         number = operand_x * operand_y
-    return str(number)
+    return number
 
 
-def get_question_and_answer():
+def get_description():
+    """Return game description.
+
+    Returns:
+        str
+    """
+    return GAME_DESCRIPTION
+
+
+def set_up():
     """Generate question and correct answer.
 
     Generate operands and operator, calculate correct answer
@@ -47,8 +56,8 @@ def get_question_and_answer():
     operator = random.choice([ADDITION, SUBTRACTION, MULTIPLICATION])
     operand_x = random.randint(START, STOP)
     operand_y = random.randint(START, STOP)
-    correct_answer = _get_correct_answer(operand_x, operand_y, operator)
-    question = 'Question: {x} {operator} {y}'.format(
+    correct_answer = str(_calculate(operand_x, operand_y, operator))
+    question = '{x} {operator} {y}'.format(
         x=operand_x,
         operator=operator,
         y=operand_y,

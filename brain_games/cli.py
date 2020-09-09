@@ -2,6 +2,8 @@
 
 import prompt
 
+from brain_games import settings
+
 
 def ask_user():
     """
@@ -10,7 +12,9 @@ def ask_user():
     Returns:
         str
     """
-    return prompt.string('Your answer: ')
+    return prompt.string(
+        '{prompt}: '.format(prompt=settings.PROMPT_FOR_ANSWER),
+    )
 
 
 def inform_user(information):
@@ -34,6 +38,10 @@ def welcome_user():
     Returns:
         str
     """
-    name = prompt.string('May I have your name? ')
-    inform_user('Hello, {name}!'.format(name=name))
+    name = prompt.string(
+        '{prompt}: '.format(prompt=settings.PROMPT_FOR_NAME),
+    )
+    inform_user('{greeting}, {name}!\n'.format(
+        greeting=settings.GREETING, name=name,
+    ))
     return name

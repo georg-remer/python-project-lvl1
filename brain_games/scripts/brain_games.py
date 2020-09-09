@@ -1,14 +1,11 @@
 """Main module."""
 
-from brain_games.games.engine import play_game
+from brain_games.games.engine import play
 
 
 def main():
-    """Play the game.
-
-    No game is specified, so it greets the user only.
-    """
-    play_game()
+    """Greet user."""
+    play()
 
 
 if __name__ == '__main__':

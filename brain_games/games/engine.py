@@ -10,88 +10,58 @@ The flow is the following:
 4.3. Check if asnwer is correct
 """
 
+from brain_games import settings
 from brain_games.cli import ask_user, inform_user, welcome_user
-from brain_games.games import (
-    brain_calc,
-    brain_even,
-    brain_gcd,
-    brain_prime,
-    brain_progression,
-)
-
-INTRO = 'Welcome to the Brain Games!'
-NUMBER_OF_ROUNDS = 3
 
 
-def init(game):
-    """Game initialization.
-
-    Args:
-        game: the name of the game to be played
-
-    Returns:
-        str
-        function
-    """
-    if game == 'brain_calc':
-        game_description = brain_calc.GAME_DESCRIPTION
-        get_question_and_answer = brain_calc.get_question_and_answer
-    elif game == 'brain_even':
-        game_description = brain_even.GAME_DESCRIPTION
-        get_question_and_answer = brain_even.get_question_and_answer
-    elif game == 'brain_gcd':
-        game_description = brain_gcd.GAME_DESCRIPTION
-        get_question_and_answer = brain_gcd.get_question_and_answer
-    elif game == 'brain_prime':
-        game_description = brain_prime.GAME_DESCRIPTION
-        get_question_and_answer = brain_prime.get_question_and_answer
-    elif game == 'brain_progression':
-        game_description = brain_progression.GAME_DESCRIPTION
-        get_question_and_answer = brain_progression.get_question_and_answer
-    return game_description, get_question_and_answer
-
-
-def play_game(game=None):
+def play(game=None):
     """Game flow.
 
     Plays the game if specified, or just greets user
 
     Args:
-        game: the name of the game to be played
+        game: Game module
     """
     # Print intro
-    inform_user(INTRO)
+    inform_user(settings.INTRO)
 
-    # Get game and print it's description
+    # Get game setup and print it's description
     if game:
-        game_description, get_question_and_answer = init(game)
-        inform_user(game_description)
+        description = game.get_description()
+        inform_user('{description}\n'.format(description=description))
 
     # Welcome user and get user name
     user_name = welcome_user()
 
     # Get question and correct answer, play the game
     if game:
-        for _ in range(NUMBER_OF_ROUNDS):
-            (question, correct_answer) = get_question_and_answer()
-            inform_user(question)
+        for _ in range(settings.NUMBER_OF_ROUNDS):
+            (question, correct_answer) = game.set_up()
+            inform_user('{phrase}: {question}'.format(
+                phrase=settings.QUESTION,
+                question=question,
+            ))
             user_answer = ask_user()
             if user_answer == correct_answer:
-                inform_user('Correct!')
+                inform_user('{phrase}'.format(phrase=settings.CASE_CORRECT))
             else:
                 inform_user(
-                    "'{user_answer}' is wrong answer ;(.".format(
+                    "'{user_answer}' {phrase}.".format(
                         user_answer=user_answer,
+                        phrase=settings.CASE_INCORRECT_WRONG,
                     )
-                    + "Correct answer was '{correct_answer}'.\n".format(
+                    + "{phrase} '{correct_answer}'.\n".format(
+                        phrase=settings.CASE_INCORRECT_EXPECTED,
                         correct_answer=correct_answer,
                     )
-                    + "Let's try again, {user_name}!".format(
+                    + '{phrase}, {user_name}!'.format(
+                        phrase=settings.CASE_INCORRECT_REPEAT,
                         user_name=user_name,
                     ),
                 )
                 break
         else:
-            inform_user('Congratulations, {user_name}!'.format(
+            inform_user('{phrase}, {user_name}!'.format(
+                phrase=settings.CONGRATULATIONS,
                 user_name=user_name,
             ))
