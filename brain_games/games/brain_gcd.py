@@ -23,16 +23,7 @@ def _find_gcd(n1, n2):
     return _find_gcd(n2, n1 % n2)
 
 
-def get_description():
-    """Return game description.
-
-    Returns:
-        str
-    """
-    return GAME_DESCRIPTION
-
-
-def set_up():
+def get_question_with_answer():
     """Generate question and correct answer.
 
     Generate two number and get correct answer
