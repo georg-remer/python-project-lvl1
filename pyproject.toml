@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "georg-remer_brain_games"
-version = "0.8.5"
+version = "0.8.6"
 description = "A set of games to keep your brain fit."
 authors = ["George Rymarenko <george.rymarenko@icloud.com>"]
 packages = [
@@ -19,7 +19,6 @@ prompt = "^0.4.1"
 wemake-python-styleguide = "^0.14.0"
 
 [tool.poetry.scripts]
-brain-games = "brain_games.scripts.brain_games:main"
 brain-calc = "brain_games.scripts.brain_calc:main"
 brain-even = "brain_games.scripts.brain_even:main"
 brain-gcd = "brain_games.scripts.brain_gcd:main"
