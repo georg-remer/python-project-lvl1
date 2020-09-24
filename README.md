@@ -8,8 +8,8 @@ Brain Games is a package of games to keep brain fit and have some fun from time 
 
 ## Installation
 
-Brain Games needs prompt to work correctly, so prompt is needed to be installed beforehand:
-`pip install prompt`
+Brain Games needs prompt to work correctly, so prompt is needed to be installed beforehand: \
+`pip install prompt` \
 `pip install -i https://test.pypi.org/simple/ georg-remer-brain-games`
 
 [![asciicast](https://asciinema.org/a/354459.svg)](https://asciinema.org/a/354459)
@@ -18,7 +18,7 @@ Brain Games needs prompt to work correctly, so prompt is needed to be installed 
 
 A random number is presented to player to guess if it's even. They should answer 'yes' or 'no'.
 
-To play this game run:
+To play this game run: \
 `brain-even`
 
 [![asciicast](https://asciinema.org/a/354464.svg)](https://asciinema.org/a/354464)
@@ -27,7 +27,7 @@ To play this game run:
 
 A random mathematical expression is presented to player to calculate it.
 
-To play this game run:
+To play this game run: \
 `brain-calc`
 
 [![asciicast](https://asciinema.org/a/354463.svg)](https://asciinema.org/a/354463)
@@ -36,7 +36,7 @@ To play this game run:
 
 Two random numbers are presented to player to find greatest common divisor for these numbers.
 
-To play this game run:
+To play this game run: \
 `brain-gcd`
 
 [![asciicast](https://asciinema.org/a/354465.svg)](https://asciinema.org/a/354465)
@@ -45,7 +45,7 @@ To play this game run:
 
 An arithmetic progression is presented to player to find the omitted element.
 
-To play this game run:
+To play this game run: \
 `brain-progression`
 
 [![asciicast](https://asciinema.org/a/354466.svg)](https://asciinema.org/a/354466)
@@ -54,7 +54,7 @@ To play this game run:
 
 A random number is presented to player to guess if it's prime. They should answer 'yes' or 'no'.
 
-To play this game run:
+To play this game run: \
 `brain-prime`
 
 [![asciicast](https://asciinema.org/a/354659.svg)](https://asciinema.org/a/354659)
