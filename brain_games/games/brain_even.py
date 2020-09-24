@@ -27,16 +27,7 @@ def _get_correct_answer(target):
     return NOT_EVEN_ANSWER
 
 
-def get_description():
-    """Return game description.
-
-    Returns:
-        str
-    """
-    return GAME_DESCRIPTION
-
-
-def set_up():
+def get_question_with_answer():
     """Generate question and correct_answer.
 
     Generate target number, get correct answer for the target number
