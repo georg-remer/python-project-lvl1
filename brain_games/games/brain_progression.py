@@ -16,16 +16,7 @@ STEP_MIN = 1
 STEP_MAX = 10
 
 
-def get_description():
-    """Return game description.
-
-    Returns:
-        str
-    """
-    return GAME_DESCRIPTION
-
-
-def set_up():
+def get_question_with_answer():
     """Generate question and correct answer.
 
     Generate progression and correct answer
@@ -36,11 +27,11 @@ def set_up():
     """
     start = random.randint(START_MIN, START_MAX)
     diff = random.randint(STEP_MIN, STEP_MAX)
-    pos = random.randint(0, LENGTH - 1)
+    omit_at = random.randint(0, LENGTH - 1)
 
-    progression = [(start + diff * element) for element in range(LENGTH)]
-    number = progression[pos]
-    progression[pos] = '..'
+    progression = [str(start + diff * element) for element in range(LENGTH)]
+    number = progression[omit_at]
+    progression[omit_at] = '..'
 
     question = ' '.join(progression)
     return question, str(number)
