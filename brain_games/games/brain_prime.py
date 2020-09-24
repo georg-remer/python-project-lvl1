@@ -15,6 +15,26 @@ PRIME_ANSWER = 'yes'
 NOT_PRIME_ANSWER = 'no'
 
 
+def _is_prime(number):
+    """Return True if number is prime else False.
+
+    Args:
+        number: number to check
+
+    Returns:
+        bool
+    """
+    if number <= 1:
+        return False
+
+    divisor = 2
+    while divisor < number:
+        if ((number % divisor) == 0) or (divisor > (number / 2)):
+            return False
+        divisor += 1
+    return True
+
+
 def _get_correct_answer(target):
     """Return string representation for correct answer.
 
@@ -24,24 +44,10 @@ def _get_correct_answer(target):
     Returns:
         str
     """
-    divisor = 2
-    while divisor < target:
-        if (target % divisor) == 0:
-            return NOT_PRIME_ANSWER
-        divisor += 1
-    return PRIME_ANSWER
+    return PRIME_ANSWER if _is_prime(target) else NOT_PRIME_ANSWER
 
 
-def get_description():
-    """Return game description.
-
-    Returns:
-        str
-    """
-    return GAME_DESCRIPTION
-
-
-def set_up():
+def get_question_with_answer():
     """Generate question and correct_answer.
 
     Generate target number, get correct answer for the target number
