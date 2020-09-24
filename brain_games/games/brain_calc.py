@@ -1,5 +1,6 @@
 """Game: Calculator."""
 
+import operator as operator_module
 import random
 
 GAME_DESCRIPTION = 'What is the result of the expression?'
@@ -23,27 +24,22 @@ def _calculate(operand_x, operand_y, operator):
 
     Returns:
         int
+
+    Raises:
+        ValueError: unknown operator is passed
     """
-    number = None
     if operator == ADDITION:
-        number = operand_x + operand_y
-    elif operator == SUBTRACTION:
-        number = operand_x - operand_y
-    elif operator == MULTIPLICATION:
-        number = operand_x * operand_y
-    return number
+        return operator_module.add(operand_x, operand_y)
+    if operator == SUBTRACTION:
+        return operator_module.sub(operand_x, operand_y)
+    if operator == MULTIPLICATION:
+        return operator_module.mul(operand_x, operand_y)
+    raise ValueError("Unknown operator: '{operator}''".format(
+        operator=operator,
+    ))
 
 
-def get_description():
-    """Return game description.
-
-    Returns:
-        str
-    """
-    return GAME_DESCRIPTION
-
-
-def set_up():
+def get_question_with_answer():
     """Generate question and correct answer.
 
     Generate operands and operator, calculate correct answer
