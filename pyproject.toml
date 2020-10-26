@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "georg-remer_brain_games"
-version = "0.8.7"
+version = "0.8.8"
 description = "A set of games to keep your brain fit."
 authors = ["George Rymarenko <george.rymarenko@icloud.com>"]
 packages = [
