@@ -38,24 +38,6 @@ def inform_user(information):
     print(information)
 
 
-def welcome_user():
-    """
-    Promt user name.
-
-    Returns name of the user
-
-    Returns:
-        str
-    """
-    name = prompt.string(
-        '{prompt}: '.format(prompt=settings.PROMPT_FOR_NAME),
-    )
-    inform_user('{greeting}, {name}!\n'.format(
-        greeting=settings.GREETING, name=name,
-    ))
-    return name
-
-
 def play(game):
     """Game flow.
 
@@ -71,7 +53,12 @@ def play(game):
     inform_user('{description}\n'.format(description=game.GAME_DESCRIPTION))
 
     # Welcome user and get user name
-    user_name = welcome_user()
+    user_name = prompt.string(
+        '{prompt}: '.format(prompt=settings.PROMPT_FOR_NAME),
+    )
+    inform_user('{greeting}, {user_name}!\n'.format(
+        greeting=settings.GREETING, user_name=user_name,
+    ))
 
     # Get question and correct answer, play the game
     for _ in range(settings.NUMBER_OF_ROUNDS):

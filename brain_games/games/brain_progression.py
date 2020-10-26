@@ -27,11 +27,11 @@ def get_question_with_answer():
     """
     start = random.randint(START_MIN, START_MAX)
     diff = random.randint(STEP_MIN, STEP_MAX)
-    omit_at = random.randint(0, LENGTH - 1)
+    skip = random.randint(0, LENGTH - 1)
 
     progression = [str(start + diff * element) for element in range(LENGTH)]
-    number = progression[omit_at]
-    progression[omit_at] = '..'
+    correct_answer = str(progression[skip])
+    progression[skip] = '..'
 
     question = ' '.join(progression)
-    return question, str(number)
+    return question, correct_answer

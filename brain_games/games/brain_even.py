@@ -7,24 +7,17 @@ GAME_DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".'
 # Numbers range
 START, STOP = 1, 100
 
-# String representations for answers
-EVEN_ANSWER = 'yes'
-NOT_EVEN_ANSWER = 'no'
 
-
-def _get_correct_answer(target):
-    """Return string representation for correct answer.
+def _is_even(number):
+    """Return True if number is even else False.
 
     Args:
-        target: target number
+        number: number to check
 
     Returns:
-        str
+        bool
     """
-    is_even = bool(target % 2 == 0)
-    if is_even:
-        return EVEN_ANSWER
-    return NOT_EVEN_ANSWER
+    return bool(number % 2 == 0)
 
 
 def get_question_with_answer():
@@ -38,7 +31,7 @@ def get_question_with_answer():
         str
     """
     target = random.randint(START, STOP)
-    correct_answer = _get_correct_answer(target)
-    question = '{target}'.format(target=target)
+    correct_answer = 'yes' if _is_even(target) else 'no'
+    question = str(target)
 
     return question, correct_answer
